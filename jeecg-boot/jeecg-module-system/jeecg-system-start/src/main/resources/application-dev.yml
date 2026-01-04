@@ -34,18 +34,18 @@ spring:
     multipart:
       max-file-size: 10MB
       max-request-size: 10MB
-  mail:
-    # 定时任务发送邮件
-    timeJobSend: false
-    host: smtp.163.com
-    username: jeecgos@163.com
-    password: ??
-    properties:
-      mail.smtp.timeout: 10000  # 连接超时（毫秒）
-      mail.smtp.connectiontimeout: 10000  # 连接超时（毫秒）
-      mail.smtp.writetimeout: 10000  # 写入超时（毫秒）
-      mail.smtp.auth: true
-      smtp.ssl.enable: true
+#  mail:
+#    # 定时任务发送邮件
+#    timeJobSend: false
+#    host: smtp.163.com
+#    username: jeecgos@163.com
+#    password: ??
+#    properties:
+#      mail.smtp.timeout: 10000  # 连接超时（毫秒）
+#      mail.smtp.connectiontimeout: 10000  # 连接超时（毫秒）
+#      mail.smtp.writetimeout: 10000  # 写入超时（毫秒）
+#      mail.smtp.auth: true
+#      smtp.ssl.enable: true
 #      mail.debug: true  # 启用调试模式(查看详细日志)
   ## quartz定时任务,采用数据库方式
   quartz:
@@ -151,9 +151,9 @@ spring:
           slow-sql-millis: 5000
       datasource:
         master:
-          url: jdbc:mysql://127.0.0.1:3306/jeecg-boot?characterEncoding=UTF-8&useUnicode=true&useSSL=false&tinyInt1isBit=false&allowPublicKeyRetrieval=true&serverTimezone=Asia/Shanghai
+          url: jdbc:mysql://192.168.11.131:30436/zyx-test?characterEncoding=UTF-8&useUnicode=true&useSSL=false&tinyInt1isBit=false&allowPublicKeyRetrieval=true&serverTimezone=Asia/Shanghai
           username: root
-          password: root
+          password: 123456
           driver-class-name: com.mysql.cj.jdbc.Driver
 #        # shardingjdbc数据源
 #        sharding-db:
@@ -162,10 +162,10 @@ spring:
   #redis 配置
   data:
     redis:
-      database: 0
-      host: 127.0.0.1
-      port: 6379
-      password:
+      database: 7
+      host: 192.168.11.131
+      port: 30479
+      password: LqYX8XMEMWYN2GTCgcvQ
 #mybatis plus 设置
 mybatis-plus:
   mapper-locations: classpath*:org/jeecg/**/xml/*Mapper.xml
@@ -187,21 +187,21 @@ minidao:
   base-package: org.jeecg.modules.jmreport.*,org.jeecg.modules.drag.*
 jeecg:
   # AI集成
-  ai-chat:
-    enabled: true
-    model: deepseek-chat
-    apiKey: ??
-    apiHost: https://api.deepseek.com/v1
-    timeout: 60
-  # AIRag向量库
-  ai-rag:
-    embed-store:
-      host: 127.0.0.1
-      port: 5432
-      database: postgres
-      user: postgres
-      password: postgres
-      table: embeddings
+#  ai-chat:
+#    enabled: true
+#    model: deepseek-chat
+#    apiKey: ??
+#    apiHost: https://api.deepseek.com/v1
+#    timeout: 60
+#  # AIRag向量库
+#  ai-rag:
+#    embed-store:
+#      host: 127.0.0.1
+#      port: 5432
+#      database: postgres
+#      user: postgres
+#      password: postgres
+#      table: embeddings
   #  Unipush配置 云函数调用 URL 化地址
   unicloud:
     pushUrl:
